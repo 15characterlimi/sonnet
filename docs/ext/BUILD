@@ -4,8 +4,6 @@ package(default_visibility = ["//sonnet:__subpackages__", "//docs/ext:__subpacka
 
 licenses(["notice"])  # Apache 2.0 License
 
-exports_files(["LICENSE"])
-
 snt_py_library(
     name = "link_tf_api",
     srcs = ["link_tf_api.py"],
@@ -20,7 +18,6 @@ snt_py_test(
     name = "link_tf_api_test",
     srcs = ["link_tf_api_test.py"],
     gpu = False,
-    tags = ["noasan"],  # TODO(b/139043523) Fix memory leak in numpy(?).
     tpu = False,
     deps = [
         ":link_tf_api",

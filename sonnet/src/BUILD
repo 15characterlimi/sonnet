@@ -4,8 +4,6 @@ package(default_visibility = ["//sonnet:__subpackages__", "//docs/ext:__subpacka
 
 licenses(["notice"])  # Apache 2.0 License
 
-exports_files(["LICENSE"])
-
 snt_py_library(
     name = "base",
     srcs = ["base.py"],
@@ -341,7 +339,6 @@ snt_py_library(
 snt_py_test(
     name = "metrics_test",
     srcs = ["metrics_test.py"],
-    tags = ["noasan"],
     deps = [
         ":metrics",
         ":test_utils",
@@ -358,7 +355,6 @@ snt_py_library(
 snt_py_test(
     name = "once_test",
     srcs = ["once_test.py"],
-    tags = ["noasan"],
     deps = [
         ":once",
         # pip: absl/testing:absltest
@@ -691,7 +687,7 @@ snt_py_test(
 snt_py_library(
     name = "types",
     srcs = ["types.py"],
-    srcs_version = "PY2AND3",
+    srcs_version = "PY3",
     deps = [
         # pip: numpy
         # pip: tensorflow
